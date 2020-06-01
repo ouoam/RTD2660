@@ -13,9 +13,10 @@
 #define _PNL_LVDS_LP141X7_C1T0                      7           //Philips
 #define _PNL_LVDS_A089SW01                          8           //
 #define _PNL_LVDS_HV070WSA                          9           //BOE
+#define _PNL_LVDS_LTN140AT01_G03                    10 
 
 
-#define _PANEL_TYPE                                 _PNL_LVDS_A089SW01
+#define _PANEL_TYPE                                 _PNL_LVDS_LTN140AT01_G03
 //-----------------------------------------------------------
 
 #if(_PANEL_TYPE == _PNL_AT102TN03)
@@ -53,4 +54,9 @@
 #if(_PANEL_TYPE == _PNL_LVDS_HV070WSA)
 #include "Panel\PNL_HV070WSA.h"
 #endif
+
+#if(_PANEL_TYPE == _PNL_LVDS_LTN140AT01_G03) 
+#include "Panel\PNL_LVDS_LTN140AT01_G03.h" 
+#endif 
+
 //-----------------------------------------------------------
