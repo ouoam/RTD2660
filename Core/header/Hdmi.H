@@ -102,7 +102,9 @@ void CHdmiAudioWaitingFlagReadyEven(void);
 void CHdmiAudioFirstTracking(void);
 void CHdmiEnableAudioOutput(void);
 void CHdmiModeChange();//741001
-#if (_HDMI_SUPPORT && _HDMI_HOT_PLUG_OPTION == _ENABLE)   //2007-8-23 15:36
+
+// #if (_HDMI_SUPPORT && _HDMI_HOT_PLUG_OPTION == _ENABLE)   //2007-8-23 15:36
+#if (_HDMI_HOT_PLUG_OPTION == _ENABLE)
 //eric 20070326 philips DVD
 	BYTE ucHDMIChangeCnt=0;
 	BIT bHDMIFrameOk=0; //Confirm 5 times 
@@ -113,13 +115,17 @@ void CHdmiModeChange();//741001
 //eric 20070326 philips DVD
 	void CHDMIStableConfirm(void);
 	void CModeHDMIChageDelay(void);
-void CAdjustHDCP(void);
 #endif
+
+#if(_HDCP_SUPPORT == _ON)
+  void CAdjustHDCP(void);
+#endif
+
 void CAdjustHdmiCbCr422(void); //730702
 void CAdjustEnableHDMIWatchDog(BYTE ucPar);//731301
 void CAdjustDisableHDMIWatchDog(BYTE ucPar);//731301
 
-#else
+#else //Else of #ifdef __HDMI__
 
 //--------------------------------------------------
 // Extern Global Hdmi Edid Data
@@ -159,12 +165,15 @@ extern BYTE ucHDMIChangeCnt;
 extern BIT bHDMIFrameOk; //Confirm 5 times 
 extern BYTE ucHDMIFrameOkCnt;
 extern void CHDMIStableConfirm(void);
+#endif
+
+#if(_HDCP_SUPPORT == _ON)
 extern void CAdjustHDCP(void);
 #endif
 
-#endif
+#endif   //End of #ifdef __HDMI__
 
-#if(_HDMI_SUPPORT == _ON)
+//  #if(_HDMI_SUPPORT == _ON)
 //--------------------------------------------------
 // Definations of HDMI Watch Dog Control
 //--------------------------------------------------
@@ -174,7 +183,7 @@ extern void CAdjustHDCP(void);
 #define _WD_AUDIO_FIFO                  0x08
 #define _WD_HDMI_ALL                    (_WD_SET_AVMUTE_ENABLE | _WD_AUDIO_FOR_TMDS_CLOCK | _WD_PACKET_VARIATION | _WD_AUDIO_FIFO)
 
-#endif
+//  #endif
 //----------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------
