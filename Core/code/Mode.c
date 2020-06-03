@@ -859,11 +859,10 @@ BYTE CModeSearchModeDVI(void)
             // Save input data enable width and height
             stModeInfo.IVHeight = ((WORD *) pData)[1] + 1;
             stModeInfo.IHWidth = ((WORD *) pData)[2] + 1;
-            //DebugPrintf("\n stModeInfo.IHWidth=%x",(BYTE)(stModeInfo.IHWidth>>8));
-            //DebugPrintf(",%x",(BYTE)(stModeInfo.IHWidth));
-            //DebugPrintf("\n stModeInfo.IVHeight=%x",(BYTE)(stModeInfo.IVHeight>>8));
-            //DebugPrintf(",%x",(BYTE)(stModeInfo.IVHeight));
-            
+            DebugPrintf("\n stModeInfo.IHWidth=%x",(BYTE)(stModeInfo.IHWidth>>8));
+            DebugPrintf(",%x",(BYTE)(stModeInfo.IHWidth));
+            DebugPrintf("\n stModeInfo.IVHeight=%x",(BYTE)(stModeInfo.IVHeight>>8));
+            DebugPrintf(",%x",(BYTE)(stModeInfo.IVHeight));
 #if(_HDMI_SUPPORT == _ON)
             // For width = 2880
             if((stModeInfo.IHWidth > 2048))
@@ -2633,7 +2632,7 @@ WORD CCalcPanelWdith(void)
 {
      BYTE ucRatio = CCalcRatio();
      
-     if(ucRatio >= 75)     // ±ÈÀý±È 4:3 ¸ü´ó
+     if(ucRatio >= 75)     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4:3 ï¿½ï¿½ï¿½ï¿½
         return Panel.DHWidth;
 
 

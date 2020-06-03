@@ -16,6 +16,8 @@
 #define UartCMD_I2CRead				(0x21 + UartCMD_OFFSET)
 #define UartCMD_I2CWrite 			(0x31 + UartCMD_OFFSET)
 
+#define UartCMD_CloseDebug          (0x40 + UartCMD_OFFSET)
+
 // not use
 #define UartCMD_24C32Read       	(0x26 + UartCMD_OFFSET)
 #define UartCMD_24C32Write      	(0x36 + UartCMD_OFFSET)

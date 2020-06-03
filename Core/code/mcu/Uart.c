@@ -215,6 +215,10 @@ void CUartHandler(void)
 			case UartCMD_I2CWrite:
 				break;
 
+			case UartCMD_CloseDebug:
+				DebugPrintf("OK");
+				CSwitchToI2C();
+				break;
 		}
 
    	}

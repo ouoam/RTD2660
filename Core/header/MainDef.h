@@ -31,11 +31,11 @@
 // Debug Tool
 //--------------------------------------------------
 //_NONE,_ISP_FOR_RTD3580D_EMCU,_ISP_FOR_DDCCI
-#define _DEBUG_TOOL                             _ISP_FOR_DDCCI
+#define _DEBUG_TOOL _NONE
 
-#define _RS232_EN					 _OFF
+#define _RS232_EN					 _ON
 
-#define _ACPOWERON_RS232			 _OFF
+#define _ACPOWERON_RS232			 _ON
 
 //--------------------------------------------------
 // OSD Type
@@ -179,7 +179,7 @@
 //--------------------------------------------------
 // Set DClk Spread Spectrum Range
 //--------------------------------------------------
-#define _DCLK_SPREAD_RANGE              		0	//0~15, 0¡÷disable, 15¡÷7.5%
+#define _DCLK_SPREAD_RANGE              		0	//0~15, 0ï¿½ï¿½disable, 15ï¿½ï¿½7.5%
 
 
 //--------------------------------------------------
@@ -291,7 +291,7 @@
 //---------------------------------------
 //2660 ver B IC need set 1
 //---------------------------------------
-#define _2660_IC_VERB 	                       1     //scaler ÊÇs4Ñ¡1²»ÊÇÑ¡0
+#define _2660_IC_VERB 	                       1     //scaler ï¿½ï¿½s4Ñ¡1ï¿½ï¿½ï¿½ï¿½Ñ¡0
 
 
 // Key Define's

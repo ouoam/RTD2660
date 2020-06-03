@@ -73,7 +73,8 @@ void IntProcTimer0(void) interrupt 1
 #if(_SLEEP_FUNC)
         if (0xff != ucAutoPowerDownTime && 0x00 != ucAutoPowerDownTime)
         {
-            ucMinuteCount++;
+            ucMinuteCount++;
+
             bShowTimerChg = 1;
             if (ucMinuteCount == _ONE_MINUTE_COUNT)  // 1 minute
             {
@@ -111,6 +112,10 @@ void UartRxData(void)
 				break;
 			case UartCMD_CScalerWrite:  		// Write RTD2553V
 				ucUartRxCount = 2;
+				break;
+			case UartCMD_CloseDebug:
+				fUartRxCmdSuccess = 1;
+				fUartStart = 0;
 				break;
 			default:
 				fUartStart = 0;

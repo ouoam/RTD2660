@@ -236,7 +236,7 @@ BYTE code tLVDS_INITIAL[] =
     5,  	_AUTOINC,       	_TCON_ADDR_PORT_8B,             	_TCON_CTRL0_00,0x09,  
     4,  	_NON_AUTOINC,   	_TCON_ADDR_PORT_8B,             	_TCON_LVDS_CTRL0_A0,
 #if( _2660_IC_VERB)
-	9,  	_NON_AUTOINC,   	_TCON_DATA_PORT_8C,             	0x00,0xD7,0xc7,0x1c,0x80,0x80,
+    9,  	_NON_AUTOINC,   	_TCON_DATA_PORT_8C,             	0x00,0xD7,0xc7,0x1c,0x80,0x80,
 #else	 
     9,  	_NON_AUTOINC,   	_TCON_DATA_PORT_8C,             	0x00,0x17,0xc7,0x1c,0x80,0x80,
 #endif    
